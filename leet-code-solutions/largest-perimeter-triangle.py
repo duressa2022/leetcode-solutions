@@ -4,12 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums=sorted(nums)
-        largest=0
+        nums.sort(reverse=True)
         for i in range(len(nums)-2):
-            if nums[i]+nums[i+1]>nums[i+2]:
-                preVal=nums[i]+nums[i+1]+nums[i+2]
-                largest=max(largest,preVal)
-        return largest
+            if nums[i]<nums[i+1]+nums[i+2]:
+                return nums[i]+nums[i+1]+nums[i+2]
+        return 0
 
         
