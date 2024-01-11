@@ -3,7 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        # is Counting sort algortithem  is inplace sorting algorithem
+        # is Counting sort algortithem  is inplace sorting algorithem?
         for i in range(len(nums)):
             for j in range(i,0,-1):
                 if nums[j-1]>nums[j]:
