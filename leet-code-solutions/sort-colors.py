@@ -3,10 +3,25 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        for i in range(len(nums)):
-            for j in range(i,0,-1):
-                if nums[j-1]>nums[j]:
-                    (nums[j-1],nums[j])=(nums[j],nums[j-1])
+        zeroPointer=-1
+        onePointer=-1
+        twoPointer=-1
+        for num in nums:
+            if num==0:
+                zeroPointer+=1
+                onePointer+=1
+                twoPointer+=1
+                nums[twoPointer]=2
+                nums[onePointer]=1
+                nums[zeroPointer]=0
+            elif num==1:
+                onePointer+=1
+                twoPointer+=1
+                nums[twoPointer]=2
+                nums[onePointer]=1
+            else:
+                twoPointer+=1
+                nums[twoPointer]=2
         
 
 
