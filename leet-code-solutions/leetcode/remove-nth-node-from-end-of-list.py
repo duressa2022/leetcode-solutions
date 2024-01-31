@@ -15,10 +15,9 @@ class Solution:
         while fast and  fast.next!=None:
             if interval<n+1:
                 interval+=1
-                fast=fast.next
             else:
                 slow=slow.next
-                fast=fast.next
+            fast=fast.next
         if fast.next is None and interval<n+1:
             return head.next
         slow.next=slow.next.next
