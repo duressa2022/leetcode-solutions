@@ -3,18 +3,17 @@ class Solution:
         counter=Counter(s)
         set1=set()
         set2=set()
-        x=0
+        left=0
         result=[]
-        for i in range(len(s)):
-            set1.add(s[i])
-            counter[s[i]]-=1
-            if counter[s[i]]==0:
-                set2.add(s[i])
+        for right in range(len(s)):
+            set1.add(s[right])
+            counter[s[right]]-=1
+            if counter[s[right]]==0:
+                set2.add(s[right])
             if len(set1)==len(set2):
-                result.append(i-x+1)
-                x=i+1
-                set1=set()
-                set2=set()
+                result.append(right-left+1)
+                left=right+1
         return result
+                
 
         
