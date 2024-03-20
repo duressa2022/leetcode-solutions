@@ -11,12 +11,13 @@ class Solution:
         (result,result_)=solver(nums)
         return result
     def mergeCounter(self,left,right):
+        length=len(left)
         counter=0
         result=[]
         i=j=0
         while i<len(left) and j<len(right):
             if left[i]>2*right[j]:
-                counter+=len(left[i:])
+                counter+=length-i
                 j=j+1
             else:
                 i=i+1
